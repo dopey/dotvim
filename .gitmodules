@@ -1,0 +1,12 @@
+[submodule "bundle/multi-cursor"]
+	path = bundle/multi-cursor
+	url = git@github.com:dopey/vim-multiple-cursors.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = git@github.com:dopey/vim-surround.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:dopey/ctrlp.vim.git
+[submodule "bundle/snippets"]
+	path = bundle/snippets
+	url = git@github.com:dopey/vim-snippets.git
