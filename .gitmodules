@@ -10,3 +10,6 @@
 [submodule "bundle/snippets"]
 	path = bundle/snippets
 	url = git@github.com:dopey/vim-snippets.git
+[submodule "bundle/javascript"]
+	path = bundle/javascript
+	url = git@github.com:dopey/vim-javascript.git
