@@ -11,6 +11,8 @@ set guicursor=a:blinkon0
 filetype plugin indent on
 "automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
+"node dictionary
+au FileType javascript set dictionary+=$HOME/.vim/bundle/node-vim/dict/node.dict
 "resize splits when the window is resized
 au VimResized * exe "normal! \<c-2>="
 
