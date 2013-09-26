@@ -105,10 +105,11 @@ nnoremap <silent> <Space> :nohl<CR><C-l>
 " don't jump over text-wrapped lines
 map j gj
 map k gk
-"NERDtree maps
-map <left> <ESC>:NERDTreeToggle<CR>
 " Map for easier escape access
-inoremap jj <Esc>
+inoremap ;s <Esc>:w<Enter>
+"New line below or above in normal mode
+nmap <C-a> O<Esc>j
+nmap <C-b> o<Esc>k
 "In normal mode, you can press prefix keys before a command (for example, 12
 "for a count). The nnoremap causes Tab to cancel any prefix keys.
 "The vnoremap causes Tab to cancel any selection (gV is required to prevent
