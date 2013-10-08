@@ -190,3 +190,8 @@ let g:ctrlp_prompt_mappings = {
 set wildignore+=*/.git/*,*/*.o,*/*.a,*/*.dep,*/*.swp	" Linux/MacOSX
 
 autocmd VimResized * wincmd =
+
+"open vimrc from anywhere
+map <leader>vimrc :vsp ~/.vim/vimrc<cr>
+" source vimrc when written
+autocmd bufwritepost vimrc source $MYVIMRC
