@@ -16,15 +16,3 @@
 [submodule "bundle/javascript-syntax"]
 	path = bundle/javascript-syntax
 	url = git@github.com:dopey/vim-javascript-syntax.git
-[submodule "vim-colors-solarized"]
-	path = vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim-node"]
-	path = vim-node
-	url = https://github.com/guileen/vim-node.git
-[submodule "bundle/vim-node"]
-	path = bundle/vim-node
-	url = https://github.com/guileen/vim-node.git
-[submodule "bundle/solarized"]
-	path = bundle/solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
