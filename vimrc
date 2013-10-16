@@ -7,6 +7,8 @@ call pathogen#helptags()
 " -----
 "stop blinking cursor
 set guicursor=a:blinkon0
+"set line numbers
+set number
 "figure out file type
 filetype plugin indent on
 "automatically reload vimrc when it's saved
