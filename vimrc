@@ -167,7 +167,7 @@ noremap ;; ;
 set nocscopeverbose
 
 " JS Mocha macro -- test only
-let @o= "ea.only"
+let @o= "ea.only:w\n"
 
 " CtrlP
 " --------
