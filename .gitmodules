@@ -19,3 +19,6 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = git@github.com:dopey/vim-colors-solarized.git
+[submodule "bundle/tern"]
+	path = bundle/tern
+	url = git@github.com:dopey/tern_for_vim.git
