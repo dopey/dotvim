@@ -22,3 +22,6 @@
 [submodule "bundle/tern"]
 	path = bundle/tern
 	url = git@github.com:dopey/tern_for_vim.git
+[submodule "bundle/golang"]
+	path = bundle/golang
+	url = git@github.com:dopey/vim-golang.git
