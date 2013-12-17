@@ -114,7 +114,7 @@ nnoremap ;w :w<CR>
 nmap <C-a> O<Esc>j
 nmap <C-b> o<Esc>k
 "Select recently pasted area in visual block
-nmap gp `[v`]
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 "Start line with a comma in correct location
 inoremap ,, <Backspace><Space><Space>,<Space>
 "In normal mode, you can press prefix keys before a command (for example, 12
@@ -122,6 +122,8 @@ inoremap ,, <Backspace><Space><Space>,<Space>
 "The vnoremap causes Tab to cancel any selection (gV is required to prevent
 "automatic reselection).
 "
+nmap <C-a> O<Esc>j
+nmap <C-b> o<Esc>k
 "The onoremap causes Tab to cancel any operator-pending command (for example,
 "y).
 "
