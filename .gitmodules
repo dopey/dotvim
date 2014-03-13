@@ -22,3 +22,6 @@
 [submodule "bundle/golang"]
 	path = bundle/golang
 	url = git@github.com:dopey/vim-golang.git
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = git@github.com:dopey/ack.vim.git
