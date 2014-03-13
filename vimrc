@@ -107,12 +107,23 @@ nnoremap <silent> <Space> :nohl<CR><C-l>
 " don't jump over text-wrapped lines
 map j gj
 map k gk
+
 " Map for easier escape access
-inoremap ;w <Esc>:w<Enter>
-nnoremap ;w :w<CR>
+inoremap ,w <Esc>:w<Enter>
+nnoremap ,w :w<CR>
+
+" Map for easier quit access
+nnoremap ,q :q<CR>
+
 "New line below or above in normal mode
 nmap <C-a> O<Esc>j
 nmap <C-b> o<Esc>k
+
+"Delete line above
+map ,da kdd
+"Delete line below
+map ,db jddk
+
 "Select recently pasted area in visual block
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 "Start line with a comma in correct location
