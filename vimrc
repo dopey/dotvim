@@ -50,6 +50,10 @@ set background=dark
 colorscheme solarized
 set modeline
 
+"Toggle solarized bg
+call togglebg#map("<C-g>")
+
+
 
 
 
@@ -116,8 +120,9 @@ nnoremap ,w :w<CR>
 nnoremap ,q :q<CR>
 
 "New line below or above in normal mode
-nmap <C-a> O<Esc>j
-nmap <C-b> o<Esc>k
+nnoremap ,a O<Esc>j
+nnoremap ,b o<Esc>k
+
 
 "Delete line above
 map ,da kdd
@@ -133,8 +138,6 @@ inoremap ,, <Backspace><Space><Space>,<Space>
 "The vnoremap causes Tab to cancel any selection (gV is required to prevent
 "automatic reselection).
 "
-nmap <C-a> O<Esc>j
-nmap <C-b> o<Esc>k
 "The onoremap causes Tab to cancel any operator-pending command (for example,
 "y).
 "
@@ -170,10 +173,6 @@ noremap ;; ;
 "nnoremap <C-c> :!cscope -Rbq<CR> :cs add cscope.out<CR>
 " automatically strip trailing whitespace when a file is saved
   :autocmd BufWritePre * :%s/\s\+$//e
-
-" the next two lines use the F5 key to toggle paste mode on/off
-  :nnoremap <F5> :set invpaste paste?<CR>
-  :set pastetoggle=<F5>
 
 " Cscope
 " --------
