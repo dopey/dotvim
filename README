@@ -12,3 +12,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule init
     git submodule update
+
+
+How To Remove a Submodule:
+http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule
