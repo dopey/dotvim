@@ -54,9 +54,14 @@ set modeline
 call togglebg#map("<C-g>")
 
 
+" Set paste toggle
+nnoremap <F8> :set invpaste paste?<CR>
+set pastetoggle=<F8>
+set showmode
 
-
-
+" Set number toggle
+set number
+nnoremap <F9> :set nonumber!<CR>
 
 " Status
 " -----
