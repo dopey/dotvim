@@ -15,4 +15,4 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
 
 How To Remove a Submodule:
-http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule
+    http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule

@@ -69,16 +69,6 @@ nnoremap <F9> :set nonumber!<CR>
 "Always display the status line
 set laststatus=2
 
-" Format string
-set statusline=%f%m%r%h\
-set statusline+=[%L]\
-set statusline+=[%{&ff}]\
-set statusline+=%y%=[%p%%]\
-set statusline+=[line:%l,col:%v]
-
-
-
-
 
 " Search
 " -----
@@ -96,15 +86,15 @@ set smartcase
 
 " Wrap search when EOF is reached
 set wrapscan
-
-
-
+"
+"
+"
 " Copy/Paste
 " ----
-nnoremap <C-y> "+y
-vnoremap <C-y> "+y
-nnoremap <C-p> "+gP
-vnoremap <C-p> "+gP
+"nnoremap <C-y> "+y
+"vnoremap <C-y> "+y
+"nnoremap <C-p> "+gP
+"vnoremap <C-p> "+gP
 
 
 
@@ -156,7 +146,7 @@ vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 "inoremap <Tab> <Esc>`^
 inoremap <Leader><Tab> <Tab>
-
+"
 "Keep search pattern at the center of the screen
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
@@ -213,4 +203,23 @@ autocmd VimResized * wincmd =
 "open vimrc from anywhere
 map <leader>vimrc :vsp ~/.vim/vimrc<cr>
 " source vimrc when written
-autocmd bufwritepost vimrc source $MYVIMRC
+"autocmd bufwritepost vimrc source $MYVIMRC
+
+let g:lightline = {
+      \ 'active': {
+      \     'left': [ [ 'mode', 'paste' ],
+      \       [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \     },
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '|', 'right': '|' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }

@@ -25,3 +25,9 @@
 [submodule "bundle/puppet"]
 	path = bundle/puppet
 	url = git@github.com:dopey/vim-puppet.git
+[submodule "bundle/lightline"]
+	path = bundle/lightline
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
