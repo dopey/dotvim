@@ -40,3 +40,6 @@
 [submodule "bundle/vim-snipmate"]
 	path = bundle/vim-snipmate
 	url = git@github.com:dopey/snipmate.vim.git
+[submodule "bundle/snipme"]
+	path = bundle/snipme
+	url = git@github.com:dopey/snipmate.vim.git
