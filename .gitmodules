@@ -10,9 +10,6 @@
 [submodule "bundle/javascript"]
 	path = bundle/javascript
 	url = git@github.com:dopey/vim-javascript.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = git@github.com:dopey/snipmate.vim.git
 [submodule "bundle/javascript-syntax"]
 	path = bundle/javascript-syntax
 	url = git@github.com:dopey/vim-javascript-syntax.git
@@ -40,3 +37,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/vim-snipmate"]
+	path = bundle/vim-snipmate
+	url = git@github.com:dopey/snipmate.vim.git
