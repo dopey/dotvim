@@ -178,7 +178,6 @@ let @o= "ea.only:w\n"
 
 " CtrlP
 " --------
-
 " set the maximum window height to be larger
 let g:ctrlp_max_height = 30
 
@@ -196,7 +195,27 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtExit()':            ['<esc>', '<c-g>'],
 	\ }
 
-set wildignore+=*/.git/*,*/*.o,*/*.a,*/*.dep,*/*.swp	" Linux/MacOSX
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -U -g ""'
+  "let g:ctrlp_user_command = 'ag %s --ignore="node_modules" -l --nocolor -f -U -g ""'
+  "let g:ctrlp_user_command = 'find %s -type f'
+endif
+" --------
+
+set wildignore+=*/tmp/*,*/.git/*,*/*.o,*/*.a,*/*.dep,*/*.swp	" Linux/MacOSX
 
 autocmd VimResized * wincmd =
 

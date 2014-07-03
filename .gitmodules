@@ -43,3 +43,6 @@
 [submodule "bundle/snipme"]
 	path = bundle/snipme
 	url = git@github.com:dopey/snipmate.vim.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
