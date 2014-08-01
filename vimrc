@@ -209,8 +209,8 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -U -g ""'
-  "let g:ctrlp_user_command = 'ag %s --ignore="node_modules" -l --nocolor -f -U -g ""'
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -f -U -g ""'
+  let g:ctrlp_user_command = 'ag %s --ignore="node_modules" -l --nocolor -f -U -g ""'
   "let g:ctrlp_user_command = 'find %s -type f'
 endif
 " --------
@@ -224,6 +224,8 @@ map <leader>vimrc :vsp ~/.vim/vimrc<cr>
 " source vimrc when written
 "autocmd bufwritepost vimrc source $MYVIMRC
 
+" lightline
+" --------
 let g:lightline = {
       \ 'active': {
       \     'left': [ [ 'mode', 'paste' ],
@@ -242,3 +244,11 @@ let g:lightline = {
       \ 'separator': { 'left': '|', 'right': '|' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
+" --------
+
+
+" jsdoc
+" --------
+let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_additional_descriptions=1
+" --------
