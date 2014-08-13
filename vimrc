@@ -251,4 +251,9 @@ let g:lightline = {
 " --------
 let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_additional_descriptions=1
+
+
 " --------
+" nerd-tree
+" --------
+map <C-t> :NERDTreeToggle<CR>

@@ -49,3 +49,6 @@
 [submodule "bundle/jsdoc"]
 	path = bundle/jsdoc
 	url = https://github.com/heavenshell/vim-jsdoc.git
+[submodule "bundle/nerd-tree"]
+	path = bundle/nerd-tree
+	url = https://github.com/scrooloose/nerdtree.git
