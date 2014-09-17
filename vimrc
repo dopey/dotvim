@@ -249,6 +249,7 @@ let g:lightline = {
 
 " jsdoc
 " --------
+" Ctrl-g hotkey
 let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_additional_descriptions=1
 
