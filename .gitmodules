@@ -48,7 +48,7 @@
 	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/jsdoc"]
 	path = bundle/jsdoc
-	url = https://github.com/heavenshell/vim-jsdoc.git
+	url = https://github.com/dopey/vim-jsdoc.git
 [submodule "bundle/nerd-tree"]
 	path = bundle/nerd-tree
 	url = https://github.com/scrooloose/nerdtree.git
