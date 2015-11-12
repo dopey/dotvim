@@ -204,15 +204,15 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  "let g:ctrlp_user_command = 'ag %s -l --nocolor -f -U -g ""'
-  let g:ctrlp_user_command = 'ag %s --ignore="node_modules" -l --nocolor -f -U -g ""'
-  "let g:ctrlp_user_command = 'find %s -type f'
-endif
+"if executable('ag')
+"  " Use Ag over Grep
+"  set grepprg=ag\ --nogroup\ --nocolor
+"
+"  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -U -g ""'
+"  "let g:ctrlp_user_command = 'ag %s --ignore="node_modules" -l --nocolor -f -U -g ""'
+"  "let g:ctrlp_user_command = 'find %s -type f'
+"endif
 " --------
 
 set wildignore+=*/tmp/*,*/.git/*,*/*.o,*/*.a,*/*.dep,*/*.swp	" Linux/MacOSX
