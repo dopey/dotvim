@@ -276,8 +276,12 @@ nnoremap <space>gp :Ggrep<Space>
 nnoremap <space>gm :Gmove<Space>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gbr :Gbrowse
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+
+" Necessary to define Browse so vim can open browser windows
+command! -bar -nargs=1 Browse silent! !open <args>
 
 " fugitive github domains
 let g:fugitive_github_domains = ["ghe.ops.betable.com"]
