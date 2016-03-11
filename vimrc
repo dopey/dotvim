@@ -278,3 +278,6 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+
+" fugitive github domains
+let g:fugitive_github_domains = ["ghe.ops.betable.com"]
