@@ -52,3 +52,6 @@
 [submodule "bundle/nerd-tree"]
 	path = bundle/nerd-tree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/markrdown-preview"]
+	path = bundle/markrdown-preview
+	url = git://github.com/JamshedVesuna/vim-markdown-preview.git
