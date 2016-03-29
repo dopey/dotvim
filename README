@@ -17,5 +17,9 @@ Updating all submodules:
 
     git submodule foreach --recursive git pull origin master
 
+Add a submodule:
+
+    git submodule add git://github.com/<account>/<module>.git bundle/<module-name>
+
 How To Remove a Submodule:
     http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule
