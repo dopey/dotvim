@@ -285,3 +285,17 @@ command! -bar -nargs=1 Browse silent! !open <args>
 
 " fugitive github domains
 let g:fugitive_github_domains = ["ghe.ops.betable.com"]
+
+
+" -------------------
+" mardown-preview
+" -------------------
+
+" Map control to M
+let vim_markdown_preview_hotkey='<C-m>'
+
+" Set default browser to Chrome (default on OSX is safari)
+let vim_markdown_preview_browser='Google Chrome'
+
+" github flavored markdown (requires python grip)
+let vim_markdown_preview_github=1
