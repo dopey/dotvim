@@ -96,7 +96,9 @@ set wrapscan
 "nnoremap <C-p> "+gP
 "vnoremap <C-p> "+gP
 
-
+" Backspace
+" ----
+set backspace=indent,eol,start
 
 " Maps
 " ---------
