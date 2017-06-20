@@ -55,6 +55,3 @@
 [submodule "bundle/markrdown-preview"]
 	path = bundle/markrdown-preview
 	url = git://github.com/JamshedVesuna/vim-markdown-preview.git
-[submodule "bundle/vim-voicecode"]
-	path = bundle/vim-voicecode
-	url = https://github.com/VoiceCode/vim-voicecode
