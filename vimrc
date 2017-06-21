@@ -1,24 +1,21 @@
-" Pathogen plugin for easy adding of future plugins
-" ---------
+" =============================================================================
+" Pathogen
+" =============================================================================
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" General Setup
-" -----
-"stop blinking cursor
-set guicursor=a:blinkon0
-"set line numbers
-set number
-"figure out file type
-filetype plugin indent on
-"automatically reload vimrc when it's saved
-au BufWritePost .vimrc so ~/.vimrc
-"node dictionary
-au FileType javascript set dictionary+=$HOME/.vim/bundle/node-vim/dict/node.dict
+" =============================================================================
+" General Settings
+" =============================================================================
+set guicursor=a:blinkon0    "stop blinking cursor
+set number                  "set line numbers
+filetype plugin indent on   "figure out file type
+au BufWritePost .vimrc so ~/.vimrc "automatically reload vimrc when it's saved
+au FileType javascript set dictionary+=$HOME/.vim/bundle/node-vim/dict/node.dict    "node dictionary
 "resize splits when the window is resized
-au VimResized * exe "normal! \<c-2>="
+au VimResized * exe 'normal! \<c-2>='
 
-" Set up OS variable
+" Set OS variable
 if !exists("g:os")
     if has("win64") || has("win32") || has("win16")
         let g:os = "Windows"
@@ -42,15 +39,10 @@ au FileType javascript setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 au FileType make setlocal noexpandtab
 
-"Set color column width"
-"if exists('+colorcolumn')
-"	set colorcolumn=79
-"else
-"	au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-"endif
 
-" Colors
-" ---------
+" =============================================================================
+" Cosmetic
+" =============================================================================
 "
 syntax on
 set background=dark
@@ -227,9 +219,11 @@ let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_additional_descriptions=1
 
 
-" ---------------------
-" fugitive git bindings
-" ---------------------
+" =============================================================================
+" Revision Control
+" =============================================================================
+"
+" fugitive
 nnoremap <space>ga :Git add %:p<CR><CR>
 nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gc :Gcommit -v -q<CR>
@@ -251,17 +245,22 @@ nnoremap <space>gpl :Dispatch! git pull<CR>
 command! -bar -nargs=1 Browse silent! !open <args>
 
 
+" =============================================================================
 " File Navigation
-" ====================================================================
+" =============================================================================
 
-" --------
 " nerd-tree
-" --------
 map <C-t> :NERDTreeToggle<CR>
 
-" ---------------------
 " FZF
-" ---------------------
+if g:os == "Darwin"
+    set rtp+=/usr/local/opt/fzf
+elseif g:os == "Linux"
+    set rtp+=~/.fzf         "linux
+else
+    set rtp+=~/.fzf         "linux
+endif
+
 nnoremap <silent> <leader><space> :Files<CR>
 
 " Setting ag as the default source for fzf
