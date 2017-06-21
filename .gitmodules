@@ -58,3 +58,6 @@
 [submodule "bundle/vim-voicecode"]
 	path = bundle/vim-voicecode
 	url = git@github.com:dopey/vim-voicecode.git
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git

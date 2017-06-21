@@ -261,7 +261,6 @@ let g:jsdoc_additional_descriptions=1
 " --------
 map <C-t> :NERDTreeToggle<CR>
 
-
 " ---------------------
 " fugitive git bindings
 " ---------------------
@@ -288,6 +287,24 @@ command! -bar -nargs=1 Browse silent! !open <args>
 " fugitive github domains
 let g:fugitive_github_domains = ["ghe.ops.betable.com"]
 
+
+" File Navigation
+" ====================================================================
+
+" ---------------------
+" FZF
+" ---------------------
+nnoremap <silent> <leader><space> :Files<CR>
+
+if has ('unix')
+    if has ('mac')              "osx
+        set rtp+=/usr/local/opt/fzf
+    else
+        set rtp+=~/.fzf         "linux
+    endif
+
+    set rtp+=~/.fzf
+endif
 
 " -------------------
 " mardown-preview
