@@ -18,6 +18,16 @@ au FileType javascript set dictionary+=$HOME/.vim/bundle/node-vim/dict/node.dict
 "resize splits when the window is resized
 au VimResized * exe "normal! \<c-2>="
 
+" Set up OS variable
+if !exists("g:os")
+    if has("win64") || has("win32") || has("win16")
+        let g:os = "Windows"
+    else
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+
+
 
 " Indenting and tabbing
 " -------
@@ -256,11 +266,6 @@ let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_additional_descriptions=1
 
 
-" --------
-" nerd-tree
-" --------
-map <C-t> :NERDTreeToggle<CR>
-
 " ---------------------
 " fugitive git bindings
 " ---------------------
@@ -284,27 +289,28 @@ nnoremap <space>gpl :Dispatch! git pull<CR>
 " Necessary to define Browse so vim can open browser windows
 command! -bar -nargs=1 Browse silent! !open <args>
 
-" fugitive github domains
-let g:fugitive_github_domains = ["ghe.ops.betable.com"]
-
 
 " File Navigation
 " ====================================================================
+
+" --------
+" nerd-tree
+" --------
+map <C-t> :NERDTreeToggle<CR>
 
 " ---------------------
 " FZF
 " ---------------------
 nnoremap <silent> <leader><space> :Files<CR>
 
-if has ('unix')
-    if has ('mac')              "osx
-        set rtp+=/usr/local/opt/fzf
-    else
-        set rtp+=~/.fzf         "linux
-    endif
-
-    set rtp+=~/.fzf
+if g:os == "Darwin"
+    set rtp+=/usr/local/opt/fzf
+elseif g:os == "Linux"
+    set rtp+=~/.fzf         "linux
+else
+    set rtp+=~/.fzf         "linux
 endif
+
 
 " -------------------
 " mardown-preview
