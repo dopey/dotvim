@@ -188,45 +188,6 @@ set nocscopeverbose
 " JS Mocha macro -- test only
 let @o= "ea.only:w\n"
 
-" CtrlP
-" --------
-" set the maximum window height to be larger
-let g:ctrlp_max_height = 30
-
-" When opening a file with <cr> or <c-t>, if the file's
-" already opened somewhere " |CtrlP| will try to jump to
-" it instead of opening a new instance: >
-"  1 - only jump to the buffer if it’s opened in the current tab.
-"  2 - jump tab as well if the buffer's opened in another tab.
-"  0 - disable this feature.
-let g:ctrlp_jump_to_buffer = 2
-
-" ctrlp prompt mappings
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtClearCache()':      ['<c-c>'],
-    \ 'PrtExit()':            ['<esc>', '<c-g>'],
-	\ }
-
-" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
-
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-"if executable('ag')
-"  " Use Ag over Grep
-"  set grepprg=ag\ --nogroup\ --nocolor
-"
-"  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -U -g ""'
-"  "let g:ctrlp_user_command = 'ag %s --ignore="node_modules" -l --nocolor -f -U -g ""'
-"  "let g:ctrlp_user_command = 'find %s -type f'
-"endif
-" --------
-
 set wildignore+=*/tmp/*,*/.git/*,*/*.o,*/*.a,*/*.dep,*/*.swp	" Linux/MacOSX
 
 autocmd VimResized * wincmd =
@@ -302,6 +263,9 @@ map <C-t> :NERDTreeToggle<CR>
 " FZF
 " ---------------------
 nnoremap <silent> <leader><space> :Files<CR>
+
+" Setting ag as the default source for fzf
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 
 if g:os == "Darwin"
     set rtp+=/usr/local/opt/fzf

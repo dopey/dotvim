@@ -4,9 +4,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git@github.com:dopey/vim-surround.git
-[submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
-	url = git@github.com:dopey/ctrlp.vim.git
 [submodule "bundle/javascript"]
 	path = bundle/javascript
 	url = git@github.com:dopey/vim-javascript.git
