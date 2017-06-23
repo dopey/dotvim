@@ -233,13 +233,13 @@ nnoremap <space>ge :Gedit<CR>
 nnoremap <space>gr :Gread<CR>
 nnoremap <space>gw :Gwrite<CR><CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gg :Ggrep<Space>
 nnoremap <space>gm :Gmove<Space>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gbr :Gbrowse
-nnoremap <space>gps :Dispatch! git push<CR>
-nnoremap <space>gpl :Dispatch! git pull<CR>
+nnoremap <space>gp :Gpush<CR>
+nnoremap <space>gpl :Gpull<CR>
 
 " Necessary to define Browse so vim can open browser windows
 command! -bar -nargs=1 Browse silent! !open <args>
