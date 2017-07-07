@@ -61,7 +61,9 @@ let g:UltiSnipsUsePythonVersion = 2
 " =============================================================================
 " Cosmetic
 " =============================================================================
-"
+
+set cc=80   " set columncolor at column 80
+
 syntax on
 set background=dark
 " let g:solarized_termcolors = 256
@@ -73,7 +75,6 @@ set modeline
 "Toggle solarized bg
 call togglebg#map("<C-g>")
 
-
 " Set paste toggle
 nnoremap <F8> :set invpaste paste?<CR>
 set pastetoggle=<F8>
@@ -83,11 +84,29 @@ set showmode
 set number
 nnoremap <F9> :set nonumber!<CR>
 
-" Status
-" -----
+" lightline
+" --------
+let g:lightline = {
+      \ 'active': {
+      \     'left': [ [ 'mode', 'paste' ],
+      \       [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \     },
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '|', 'right': '|' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
+" --------
 
-"Always display the status line
-set laststatus=2
+set laststatus=2    "Always display the status line
 
 
 " Search
@@ -106,15 +125,6 @@ set smartcase
 
 " Wrap search when EOF is reached
 set wrapscan
-"
-"
-"
-" Copy/Paste
-" ----
-"nnoremap <C-y> "+y
-"vnoremap <C-y> "+y
-"nnoremap <C-p> "+gP
-"vnoremap <C-p> "+gP
 
 " Backspace
 " ----
@@ -207,27 +217,6 @@ map <leader>vimrc :vsp ~/.vim/vimrc<cr>
 " source vimrc when written
 "autocmd bufwritepost vimrc source $MYVIMRC
 
-" lightline
-" --------
-let g:lightline = {
-      \ 'active': {
-      \     'left': [ [ 'mode', 'paste' ],
-      \       [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \     },
-      \ 'component': {
-      \   'readonly': '%{&readonly?"x":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': '|', 'right': '|' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
-" --------
 
 
 " jsdoc
@@ -293,9 +282,9 @@ else
 endif
 
 
-" -------------------
-" mardown-preview
-" -------------------
+" =============================================================================
+" Markdown-Preview
+" =============================================================================
 
 " Map control to M
 let vim_markdown_preview_hotkey='<C-m>'
