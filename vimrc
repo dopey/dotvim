@@ -294,3 +294,20 @@ let vim_markdown_preview_browser='Google Chrome'
 
 " github flavored markdown (requires python grip)
 let vim_markdown_preview_github=1
+
+
+" =============================================================================
+" Syntastic
+" =============================================================================
+
+" redefine syntastic go checkers, otherwise syntastic recompiles entire
+" project on save
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+
+
+" =============================================================================
+" Golang
+" =============================================================================
+
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
