@@ -311,3 +311,6 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 " format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
+
+let g:go_def_mapping_enabled = 0
+map <C-e> :GoDefPop<CR>
